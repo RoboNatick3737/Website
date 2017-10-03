@@ -67,7 +67,7 @@ import { Router } from "@angular/router";
         </div>
         <div class="parallax__layer parallax__layer--back">
           <div class="imagePanel">
-            <img src="/assets/old-season/competitions/worlds/pic8.jpg">
+            <img src="/assets/old-season/competitions/states/pic1.jpg">
           </div>
         </div>
       </div>
@@ -99,7 +99,7 @@ import { Router } from "@angular/router";
         </div>
         <div class="parallax__layer parallax__layer--back">
           <div class="imagePanel">
-            <img src="/assets/old-season/outreach/hospital/pic3.jpg">
+            <img src="/assets/code-screenshots/code1.png">
           </div>
         </div>
       </div>
@@ -323,14 +323,11 @@ import { Router } from "@angular/router";
     .clickablePanel {
       opacity: 1;
       cursor: default;
+      transition: all .2s ease-in-out;
     }
 
     .clickablePanel:hover {
-      opacity: 0.8;
-    }
-
-    .clickablePanel:active {
-      opacity: 0.6;
+      transform: scale(1.1);
     }
   `],
   animations: [

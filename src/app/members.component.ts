@@ -1,6 +1,6 @@
-import {Component} from "@angular/core";
-import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {MemberModalComponent} from "./member-modal.component";
+import { Component } from "@angular/core";
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { MemberModalComponent } from "./member-modal.component";
 
 export class Member {
   constructor (_name: string, _roles: string[], _bio: string) {
@@ -42,6 +42,7 @@ export class Member {
       background-size: 100% auto;
       display: flex;
       align-items: flex-end;
+      transition: all .1s ease-in-out;
     }
 
     p {
