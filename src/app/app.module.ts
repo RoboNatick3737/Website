@@ -14,7 +14,9 @@ import { RobotsComponent } from "./robots.component";
 import { OutreachComponent } from "./outreach.component";
 import { SeasonComponent } from "./season.component";
 import { ResourcesComponent } from "./resources.component";
-import {ContactComponent} from "./contact.component";
+import { ContactComponent } from "./contact.component";
+import { MembersComponent } from "./members.component";
+import { MemberModalComponent } from "./member-modal.component";
 
 // Services
 // import service from service file
@@ -36,10 +38,13 @@ import {ContactComponent} from "./contact.component";
     SeasonComponent,
     OutreachComponent,
     ResourcesComponent,
-    ContactComponent
+    ContactComponent,
+    MembersComponent,
+    MemberModalComponent
   ],
   entryComponents: [
     // Components that are added mid-run (like modals)
+    MemberModalComponent
   ],
   providers: [
   ],

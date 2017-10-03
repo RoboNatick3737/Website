@@ -11,14 +11,15 @@ import { Router } from "@angular/router";
     <div class="parallax">
       <!-- Title -->
       <div id="titleSection" class="parallax__group">
-        <div class="parallax__layer parallax__layer--base">
+        <div class="parallax__layer parallax__layer--base"
+             style="background: url('/assets/old-season/finalrobot/full_robot.jpg') center; background-size: 100% auto;">
           <div class="centeredContent">
             <div class="orangePanel">
               <h1 class="thinFont1 panelHeading" style="font-size: 100px;">HANK'S TANKS</h1>
             </div>
             <div class="lightPanel">
-              <p class="thinFont2" style="color: black; font-size: 30px;">We've got swagger like you wouldn't
-                believe.</p>
+              <p class="thinFont2" style="color: black; font-size: 30px;">We're an FTC team from Natick, MA, and we've
+                got swagger like you wouldn't believe.</p>
             </div>
           </div>
         </div>
@@ -26,34 +27,16 @@ import { Router } from "@angular/router";
 
       <!-- Our Team -->
       <div id="teamSection" class="parallax__group">
-        <div class="parallax__layer parallax__layer--base">
-          <div class="centeredContent">
+        <div class="parallax__layer parallax__layer--base" style="pointer-events: none">
+          <div class="centeredContent" style="background-color: rgba(0,0,0,0.33);" *ngIf="currentlySelected !== ''">
             <div style="background-color: rgba(255,255,255,0.26); border-radius: 20px;">
-              <!--<p class="thinFont1 panelHeading">Our Team</p>-->
+              <p class="thinFont1 panelHeading"></p>
             </div>
           </div>
         </div>
+
         <div class="parallax__layer parallax__layer--back">
-          <table class="thinFont1" id="headshotTable" style="width: 100%; height: 100%;">
-            <tr>
-              <td>Makiah</td>
-              <td>Joe</td>
-              <td>Sean</td>
-              <td>Ian</td>
-            </tr>
-            <tr>
-              <td>Ben</td>
-              <td>Anthony</td>
-              <td>Danny</td>
-              <td>Someone</td>
-            </tr>
-            <tr>
-              <td>Someone</td>
-              <td>Someone</td>
-              <td>Someone</td>
-              <td>Someone</td>
-            </tr>
-          </table>
+          <members></members>
         </div>
       </div>
 
@@ -61,14 +44,14 @@ import { Router } from "@angular/router";
       <div id="robotsSection" class="parallax__group">
         <div class="parallax__layer parallax__layer--fore">
           <div class="centeredContent">
-            <div class="lightPanel clickablePanel"  (click)="routeTo('robots')">
+            <div class="lightPanel clickablePanel" (click)="routeTo('robots')">
               <h1 class="thinFont1" style="color: black; font-size: 100px;">Our Robots</h1>
             </div>
           </div>
         </div>
         <div class="parallax__layer parallax__layer--base">
           <div class="imagePanel">
-            <img src="/assets/robot.jpg">
+            <img src="/assets/old-season/robot/full_robot.jpg">
           </div>
         </div>
       </div>
@@ -116,7 +99,7 @@ import { Router } from "@angular/router";
         </div>
         <div class="parallax__layer parallax__layer--back">
           <div class="imagePanel">
-            <img src="/assets/hospital-outreach.jpg">
+            <img src="/assets/old-season/outreach/hospital/pic3.jpg">
           </div>
         </div>
       </div>
@@ -228,12 +211,6 @@ import { Router } from "@angular/router";
       z-index: 5; /* slide over group 2 */
     }
 
-    #titleSection .parallax__layer--base {
-      background: url("/assets/old-season/finalrobot/full_robot.jpg");
-      background-size: 100% auto;
-      background-position: center;
-    }
-
     #teamSection {
       z-index: 3; /* slide under groups 1 and 3 */
     }
@@ -343,18 +320,6 @@ import { Router } from "@angular/router";
       background-position: center;
     }
 
-    #headshotTable td {
-      text-align: center;
-      vertical-align: bottom;
-      color: white;
-
-      background-image: url('/assets/headshot-example.png');
-      background-size: 100% auto;
-      background-position: center;
-      
-      opacity: 1;
-    }
-
     .clickablePanel {
       opacity: 1;
       cursor: default;
@@ -373,6 +338,8 @@ import { Router } from "@angular/router";
 })
 export class HomeComponent {
   constructor (private router: Router) {}
+
+  currentlySelected: string = "";
 
   routeTo(route: string) {
     this.router.navigate([route]);
