@@ -19,7 +19,7 @@ export class Member {
   template: `
     <div id="container">
       <div class="memberPanel" *ngFor="let member of members" [style.background-image]="'url(/assets/profile-pics/' + member.name.toLowerCase() + '.png)'" (click)="openMember(member)">
-        <p class="thinFont1" style="color: white; vertical-align: center; font-size: 50px;">{{member.name}}</p>
+        <p class="thinFont1" style="color: white; vertical-align: center; font-size: 5vw;">{{member.name}}</p>
       </div>
     </div>
   `,
@@ -35,23 +35,23 @@ export class Member {
     .memberPanel {
       width: 25%;
       height: 33.33%;
-      background-color: white;
       float: left;
       overflow: hidden;
-      background-position: center;
-      background-size: 100% auto;
+      
+      background: white center;
+      background-size: cover;
+      
       display: flex;
       align-items: flex-end;
-      transition: all .1s ease-in-out;
     }
 
     p {
       margin: 0;
       background-color: rgba(128, 128, 128, 0.6);
     }
-
+    
     .memberPanel:hover {
-      background-size: 105% auto;
+      border: 1px solid grey;
     }
   `]
 })

@@ -12,13 +12,13 @@ import { Router } from "@angular/router";
       <!-- Title -->
       <div id="titleSection" class="parallax__group">
         <div class="parallax__layer parallax__layer--base"
-             style="background: url('/assets/old-season/finalrobot/full_robot.jpg') center; background-size: 100% auto;">
+             style="background: url('/assets/old-season/finalrobot/full_robot.jpg') center; background-size: cover;">
           <div class="centeredContent">
             <div class="orangePanel">
-              <h1 class="thinFont1 panelHeading" style="font-size: 100px;">HANK'S TANKS</h1>
+              <h1 class="thinFont1 panelHeading" style="font-size: 11vw;">HANK'S TANKS</h1>
             </div>
             <div class="lightPanel">
-              <p class="thinFont2" style="color: black; font-size: 30px;">We're an FTC team from Natick, MA, and we've
+              <p class="thinFont2" style="color: black; font-size: 3vw;">We're an FTC team from Natick, MA, and we've
                 got swagger like you wouldn't believe.</p>
             </div>
           </div>
@@ -44,14 +44,12 @@ import { Router } from "@angular/router";
       <div id="robotsSection" class="parallax__group">
         <div class="parallax__layer parallax__layer--fore">
           <div class="centeredContent">
-            <div class="lightPanel clickablePanel" (click)="routeTo('robots')">
-              <h1 class="thinFont1" style="color: black; font-size: 100px;">Our Robots</h1>
-            </div>
+            <robots></robots>
           </div>
         </div>
         <div class="parallax__layer parallax__layer--base">
           <div class="imagePanel">
-            <img src="/assets/old-season/robot/full_robot.jpg">
+            <!--<img src="/assets/old-season/robot/full_robot.jpg">-->
           </div>
         </div>
       </div>
@@ -66,9 +64,7 @@ import { Router } from "@angular/router";
           </div>
         </div>
         <div class="parallax__layer parallax__layer--back">
-          <div class="imagePanel">
-            <img src="/assets/old-season/competitions/states/pic1.jpg">
-          </div>
+          <div class="imagePanel" style="background: url('/assets/old-season/competitions/states/pic1.jpg') center; background-size: cover;"></div>
         </div>
       </div>
 
@@ -82,9 +78,7 @@ import { Router } from "@angular/router";
           </div>
         </div>
         <div class="parallax__layer parallax__layer--base">
-          <div class="imagePanel">
-            <img src="/assets/old-season/outreach/hospital/pic5.jpg">
-          </div>
+          <div class="imagePanel" style="background: url('/assets/old-season/outreach/hospital/pic5.jpg') center; background-size: cover;"></div>
         </div>
       </div>
 
@@ -98,9 +92,7 @@ import { Router } from "@angular/router";
           </div>
         </div>
         <div class="parallax__layer parallax__layer--back">
-          <div class="imagePanel">
-            <img src="/assets/code-screenshots/code1.png">
-          </div>
+          <div class="imagePanel" style="background: url('/assets/code-screenshots/code1.png') center; background-size: cover;"></div>
         </div>
       </div>
 
@@ -257,7 +249,7 @@ import { Router } from "@angular/router";
 
     #contactUsSection .parallax__layer--base {
       background: #33ec4a url("/assets/old-season/outreach/carnival/pic1.jpg");
-      background-size: 140% auto;
+      background-size: cover;
       background-position: center;
     }
 
@@ -310,14 +302,6 @@ import { Router } from "@angular/router";
 
     .panelHeading {
       font-size: 90px;
-    }
-
-    .imagePanel > img {
-      width: 100%;
-      height: auto;
-
-      background-size: 100% auto;
-      background-position: center;
     }
 
     .clickablePanel {
