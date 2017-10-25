@@ -61,11 +61,11 @@ import { Router } from "@angular/router";
       <!-- Season Progression -->
       <div id="seasonSection" class="parallax__group">
         <div class="parallax__layer parallax__layer--base">
-          <!--<div class="centeredContent">-->
-            <!--<div class="darkPanel clickablePanel {{seasonExpansion === 'contract' ? 'animateOnHoverPanel' : ''}}" (click)="seasonExpansion = 'expand'" [@clickablePanelExpansion]="seasonExpansion">-->
-              <!--<h2 class="thinFont1 scaleableText">Season</h2>-->
-            <!--</div>-->
-          <!--</div>-->
+          <div class="centeredContent">
+            <div class="darkPanel">
+              <h3 class="thinFont1 scaleableText">2016-17</h3>
+            </div>
+          </div>
         </div>
         <div class="parallax__layer parallax__layer--back">
           <season></season>
@@ -76,13 +76,16 @@ import { Router } from "@angular/router";
       <div id="outreachSection" class="parallax__group">
         <div class="parallax__layer parallax__layer--fore">
           <!--<div class="centeredContent">-->
-            <!--<div class="lightPanel clickablePanel {{outreachExpansion === 'contract' ? 'animateOnHoverPanel' : ''}}" (click)="outreachExpansion = 'expand'" [@clickablePanelExpansion]="outreachExpansion">-->
+            <!--<div class="lightPanel" style="text-align: center">-->
               <!--<h2 class="thinFont1 scaleableText">Outreach</h2>-->
+              <!--<ul style="width: 50%; margin: 0;">-->
+                <!--<li class="thinFont1">Testing</li>-->
+              <!--</ul>-->
             <!--</div>-->
           <!--</div>-->
         </div>
         <div class="parallax__layer parallax__layer--base">
-          <div class="imagePanel" style="background: url('/assets/old-season/outreach/hospital/pic5.jpg') center; background-size: cover;"></div>
+          <outreach></outreach>
         </div>
       </div>
 
@@ -90,8 +93,9 @@ import { Router } from "@angular/router";
       <div id="resourceSection" class="parallax__group">
         <div class="parallax__layer parallax__layer--base">
           <div class="centeredContent">
-            <div class="darkPanel clickablePanel {{resourceExpansion === 'contract' ? 'animateOnHoverPanel' : ''}}" (click)="resourceExpansion = 'expand'" [@clickablePanelExpansion]="resourceExpansion">
+            <div class="lightPanel">
               <h2 class="thinFont1 scaleableText">Resources</h2>
+              <resources></resources>
             </div>
           </div>
         </div>
@@ -327,6 +331,10 @@ import { Router } from "@angular/router";
     
     h2.scaleableText {
       font-size: 10vw;
+    }
+
+    h3.scaleableText {
+      font-size: 8vw;
     }
     
     p.scaleableText {

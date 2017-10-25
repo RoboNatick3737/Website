@@ -19,7 +19,7 @@ export class Member {
   template: `
     <div id="container">
       <div class="memberPanel" *ngFor="let member of members" [style.background-image]="'url(/assets/profile-pics/' + member.name.toLowerCase() + '.png)'" (click)="openMember(member)">
-        <p class="thinFont1" style="color: white; vertical-align: center; font-size: 5vw;">{{member.name}}</p>
+        <p class="thinFont1" style="color: white; vertical-align: center; font-size: 4vw;">{{member.name}}</p>
       </div>
     </div>
   `,
