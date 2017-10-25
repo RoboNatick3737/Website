@@ -12,14 +12,16 @@ import { Router } from "@angular/router";
       <!-- Title -->
       <div id="titleSection" class="parallax__group">
         <div class="parallax__layer parallax__layer--base"
-             style="background: url('/assets/old-season/finalrobot/full_robot.jpg') center; background-size: cover;">
+             style="background: url('/assets/old-season/finalrobot/button_pusher.jpg') center; background-size: cover;">
           <div class="centeredContent">
-            <div class="orangePanel">
-              <h1 class="thinFont1 panelHeading" style="font-size: 11vw;">HANK'S TANKS</h1>
-            </div>
-            <div class="lightPanel">
-              <p class="thinFont2" style="color: black; font-size: 3vw;">We're an FTC team from Natick, MA, and we've
-                got swagger like you wouldn't believe.</p>
+            <div>
+              <div class="orangePanel">
+                <h1 class="thinFont1 scaleableText">HANK'S TANKS</h1>
+              </div>
+              <div class="lightPanel">
+                <p class="thinFont2 scaleableText">We're an FTC team from Natick, MA, and we've
+                  got swagger like you wouldn't believe.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -28,9 +30,11 @@ import { Router } from "@angular/router";
       <!-- Our Team -->
       <div id="teamSection" class="parallax__group">
         <div class="parallax__layer parallax__layer--base" style="pointer-events: none">
-          <div class="centeredContent" style="background-color: rgba(0,0,0,0.33);" *ngIf="currentlySelected !== ''">
+          
+          <!-- Currently not active since not necessary. -->
+          <div class="centeredContent" style="background-color: rgba(0,0,0,0.33); display: none;">
             <div style="background-color: rgba(255,255,255,0.26); border-radius: 20px;">
-              <p class="thinFont1 panelHeading"></p>
+              <p class="thinFont1"></p>
             </div>
           </div>
         </div>
@@ -43,39 +47,39 @@ import { Router } from "@angular/router";
       <!-- Our Robots -->
       <div id="robotsSection" class="parallax__group">
         <div class="parallax__layer parallax__layer--fore">
-          <div class="centeredContent">
-            <robots></robots>
-          </div>
+          <!--<div class="centeredContent">-->
+            <!--<div class="lightPanel clickablePanel {{robotsExpansion === 'contract' ? 'animateOnHoverPanel' : ''}}" (click)="robotsExpansion = 'expand'" [@clickablePanelExpansion]="robotsExpansion">-->
+              <!--<h2 class="thinFont1 scaleableText">Our Bots</h2>-->
+            <!--</div>-->
+          <!--</div>-->
         </div>
         <div class="parallax__layer parallax__layer--base">
-          <div class="imagePanel">
-            <!--<img src="/assets/old-season/robot/full_robot.jpg">-->
-          </div>
+          <robots></robots>
         </div>
       </div>
 
       <!-- Season Progression -->
       <div id="seasonSection" class="parallax__group">
         <div class="parallax__layer parallax__layer--base">
-          <div class="centeredContent">
-            <div class="darkPanel clickablePanel" (click)="routeTo('season')">
-              <p class="thinFont1 panelHeading">Season Progression</p>
-            </div>
-          </div>
+          <!--<div class="centeredContent">-->
+            <!--<div class="darkPanel clickablePanel {{seasonExpansion === 'contract' ? 'animateOnHoverPanel' : ''}}" (click)="seasonExpansion = 'expand'" [@clickablePanelExpansion]="seasonExpansion">-->
+              <!--<h2 class="thinFont1 scaleableText">Season</h2>-->
+            <!--</div>-->
+          <!--</div>-->
         </div>
         <div class="parallax__layer parallax__layer--back">
-          <div class="imagePanel" style="background: url('/assets/old-season/competitions/states/pic1.jpg') center; background-size: cover;"></div>
+          <season></season>
         </div>
       </div>
 
       <!-- Outreach -->
       <div id="outreachSection" class="parallax__group">
         <div class="parallax__layer parallax__layer--fore">
-          <div class="centeredContent">
-            <div class="lightPanel clickablePanel" (click)="routeTo('outreach')">
-              <p class="thinFont1 panelHeading">Outreach</p>
-            </div>
-          </div>
+          <!--<div class="centeredContent">-->
+            <!--<div class="lightPanel clickablePanel {{outreachExpansion === 'contract' ? 'animateOnHoverPanel' : ''}}" (click)="outreachExpansion = 'expand'" [@clickablePanelExpansion]="outreachExpansion">-->
+              <!--<h2 class="thinFont1 scaleableText">Outreach</h2>-->
+            <!--</div>-->
+          <!--</div>-->
         </div>
         <div class="parallax__layer parallax__layer--base">
           <div class="imagePanel" style="background: url('/assets/old-season/outreach/hospital/pic5.jpg') center; background-size: cover;"></div>
@@ -86,8 +90,8 @@ import { Router } from "@angular/router";
       <div id="resourceSection" class="parallax__group">
         <div class="parallax__layer parallax__layer--base">
           <div class="centeredContent">
-            <div class="darkPanel clickablePanel" (click)="routeTo('resources')">
-              <p class="thinFont1 panelHeading">Resources</p>
+            <div class="darkPanel clickablePanel {{resourceExpansion === 'contract' ? 'animateOnHoverPanel' : ''}}" (click)="resourceExpansion = 'expand'" [@clickablePanelExpansion]="resourceExpansion">
+              <h2 class="thinFont1 scaleableText">Resources</h2>
             </div>
           </div>
         </div>
@@ -98,10 +102,11 @@ import { Router } from "@angular/router";
 
       <!-- Contact Us -->
       <div id="contactUsSection" class="parallax__group">
-        <div class="parallax__layer parallax__layer--base">
+        <div class="parallax__layer parallax__layer--base" style="background: #33ec4a url('/assets/old-season/outreach/carnival/pic1.jpg'); background-size: cover; background-position: center;">
           <div class="centeredContent">
-            <div class="lightPanel clickablePanel" (click)="routeTo('contact')">
-              <p class="thinFont1 panelHeading">Contact Us!</p>
+            <div class="lightPanel">
+              <h2 class="thinFont1 scaleableText">Contact Us!</h2>
+              <a class="thinFont1 scaleableText" href="mailto:'robonatick3737@gmail.com'">robonatick3737@gmail.com</a>
             </div>
           </div>
         </div>
@@ -187,13 +192,12 @@ import { Router } from "@angular/router";
 
     /* centre the content in the parallax layers */
     .centeredContent {
-      text-align: center;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
       width: 100%;
+      height: 100%;
+      
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     /* style the groups
@@ -248,13 +252,13 @@ import { Router } from "@angular/router";
     }
 
     #contactUsSection .parallax__layer--base {
-      background: #33ec4a url("/assets/old-season/outreach/carnival/pic1.jpg");
-      background-size: cover;
-      background-position: center;
+      background: rgb(245, 235, 100);
     }
 
     /* Custom classes */
     .darkPanel {
+      text-align: center;
+      
       background-color: rgba(0, 0, 0, 0.7);
       border-radius: 20px;
       padding: 30px;
@@ -263,11 +267,13 @@ import { Router } from "@angular/router";
       margin-right: 10%;
     }
 
-    .darkPanel .panelHeading {
+    .darkPanel h1, .darkPanel h2, .darkPanel h3, .darkPanel p {
       color: white;
     }
 
     .orangePanel {
+      text-align: center;
+      
       background-color: rgba(225, 159, 0, 0.8);
       border-radius: 20px;
       padding: 30px;
@@ -276,11 +282,13 @@ import { Router } from "@angular/router";
       margin-right: 10%;
     }
 
-    .orangePanel .panelHeading {
+    .orangePanel h1, .orangePanel h2, .orangePanel h3, .orangePanel p {
       color: white;
     }
 
     .lightPanel {
+      text-align: center;
+      
       background-color: rgba(255, 255, 255, 0.7);
       border-radius: 20px;
       padding: 30px;
@@ -289,7 +297,7 @@ import { Router } from "@angular/router";
       margin-right: 10%;
     }
 
-    .lightPanel .panelHeading {
+    .lightPanel h1, .lightPanel h2, .lightPanel h3, .lightPanel p {
       color: black;
     }
 
@@ -300,29 +308,51 @@ import { Router } from "@angular/router";
       background-color: white;
     }
 
-    .panelHeading {
-      font-size: 90px;
-    }
-
     .clickablePanel {
       opacity: 1;
       cursor: default;
+    }
+    
+    .animateOnHoverPanel {
       transition: all .2s ease-in-out;
     }
 
-    .clickablePanel:hover {
+    .animateOnHoverPanel:hover {
       transform: scale(1.1);
+    }
+    
+    h1.scaleableText {
+      font-size: 11vw;
+    }
+    
+    h2.scaleableText {
+      font-size: 10vw;
+    }
+    
+    p.scaleableText {
+      font-size: 3vw;
+    }
+
+    a.scaleableText {
+      font-size: 3vw;
     }
   `],
   animations: [
+    trigger("clickablePanelExpansion", [
+      state("expand", style({
+        "opacity": "0"
+      })),
+      state("contract", style({
+        "opacity": "1"
+      })),
+      transition("expand => contract", animate("400ms ease-in-out")),
+      transition("contract => expand", animate("400ms ease-in-out"))
+    ])
   ]
 })
 export class HomeComponent {
-  constructor (private router: Router) {}
-
-  currentlySelected: string = "";
-
-  routeTo(route: string) {
-    this.router.navigate([route]);
-  }
+  robotsExpansion = "contract";
+  seasonExpansion = "contract";
+  outreachExpansion = "contract";
+  resourceExpansion = "contract";
 }

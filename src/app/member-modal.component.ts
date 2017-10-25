@@ -25,14 +25,13 @@ import { Member } from "./members.component";
   styles: [`    
     #heading {
       width: 100%;
-      height: 40vw;
       overflow: hidden;
       text-align: center;
     }
     
     #heading img {
-      height: 100%;
-      width: auto;
+      width: 100%;
+      height: auto;
     }
     
     h3 {
