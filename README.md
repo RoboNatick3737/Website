@@ -1,11 +1,3 @@
-# Angular Seed
+# Hank's Tanks Website
 
-I've found that I have a tendency to repeat many steps to create a new Angular app, so this just streamlines the steps involved.  
-
-## Includes
-
-- Bootstrap 4 CSS and ng-bootstrap
-- Routing module
-- App Component and other frameworks.  
-- GitHub 404 Fix (if hosted on pages).   
-- Animations Module
+Contains the code for our website!  Check it out @ https://robonatick3737.github.io!  
